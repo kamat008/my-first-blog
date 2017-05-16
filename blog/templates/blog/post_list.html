@@ -7,16 +7,15 @@
             <h1><a href="">Vikblog Blog</a></h1>
         </div>
 
+        
+            {% for post in posts %}
         <div>
-            <p>published: 15.05.2017, 19:24</p>
-            <h2><a href="">My first post</a></h2>
-            <p> When we type first blog, it gives us a tremendous pleaser and happiness.Go ahead and type some more</p>
+             <p>published: {{ post.published_date }}</p>
+             <h1><a href="">{{ post.title }}</a></h1>
+             <p>{{ post.text|linebreaksbr }}</p>
         </div>
-
-        <div>
-            <p>published: 15.05.2017, 19:26</p>
-            <h2><a href="">My second post</a></h2>
-            <p> Hey its second but we will have more to go.Just have a good time.Hurry!!!</p>
-        </div>
+            {% endfor %}
+  
+       
     </body>
 </html>
